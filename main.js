@@ -54,9 +54,6 @@ function document_ready_jquery() {
     { 
         // Prevent default form submission
         event.preventDefault(); 
-        
-        // Annoy the user
-     //   alert("stop pushing me");
 
         // Get form data
         var formData = $("#input_items_form").serialize();
@@ -77,26 +74,31 @@ function document_ready_jquery() {
                     $("#sorted_list").append("<h4>Unsorted Items: </h4>");
 
                     var ul = $('<ul>').appendTo('#sorted_list');
-                    
-                    $(data).find("unsorted_numbers").each(function(index, item) 
+
+                    $(data).find("unsorted_item").each(function()
                     {
-                        ul.append(
-                            $(document.createElement('li')).text(item)
-                        );
+                            var thisItem = $(this).text();
+
+                            ul.append(
+                              $(document.createElement('li')).text(thisItem)
+                            );
                     });
 
-                   
 
-              /*      // Sorted Items
+                    // Sorted Items
                     $("#sorted_list").append("<h4>Sorted Items: </h4>");
 
                     var ul = $('<ul>').appendTo('#sorted_list');
-                    
-                   $(data.sorted_numbers).each(function(index, item) {
-                       ul.append(
-                           $(document.createElement('li')).text(item)
-                       );
-                    });*/
+
+                    $(data).find("sorted_item").each(function()
+                    {
+                            var thisItem = $(this).text();
+
+                            ul.append(
+                              $(document.createElement('li')).text(thisItem)
+                            );
+                    });
+
             }
         });
     }); 
