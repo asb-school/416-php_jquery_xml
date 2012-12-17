@@ -26,7 +26,7 @@ sort($sortedArray);
 $unsortedNumbers = $xmlDocument->addChild('unsorted_numbers');
 
 // Add children to unsorted numbers
-foreach ($unsortedArray as $key => $value)
+foreach ($unsortedArray as $value)
 {
 	$unsortedNumbers->addChild('unsorted_item', $value);
 }
@@ -35,7 +35,7 @@ foreach ($unsortedArray as $key => $value)
 $sortedNumbers = $xmlDocument->addChild('sorted_numbers');
 
 // Add children to sorted numbers
-foreach ($sortedArray as $key => $value)
+foreach ($sortedArray as $value)
 {
 	$sortedNumbers->addChild('sorted_item', $value);
 }
